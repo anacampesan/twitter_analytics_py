@@ -14,30 +14,30 @@ import json
 # The blocks below require internet connection to work, so I previously stored a copy
 # of my own timeline object so that I can use when no connection is available
 
-# # Twitter authentication constants
-# ACCESS_TOKEN        = ""
-# ACCESS_TOKEN_SECRET = ""
-# CONSUMER_KEY        = ""
-# CONSUMER_KEY_SECRET = ""
-#
-# # Twython object
-# twitter = Twython(CONSUMER_KEY, CONSUMER_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-#
-# # Grabs data from my timeline
-# try:
-#     timeline = twitter.get_home_timeline(screen_name='anazard')
-# except TwythonError as e:
-#     print e
-#
-# # Prints it out
-# # print timeline
-#
-# # Shows the amount of tweets retrieved
-# # print len(timeline)
-#
-# # Stores the timeline info (for offline use)
-# with open('timeline.pkl', 'wb') as f:
-#     pickle.dump(timeline, f, pickle.HIGHEST_PROTOCOL)
+# Twitter authentication constants
+ACCESS_TOKEN        = ""
+ACCESS_TOKEN_SECRET = ""
+CONSUMER_KEY        = ""
+CONSUMER_KEY_SECRET = ""
+
+# Twython object
+twitter = Twython(CONSUMER_KEY, CONSUMER_KEY_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+
+# Grabs data from my timeline
+try:
+    timeline = twitter.get_home_timeline(screen_name='anazard')
+except TwythonError as e:
+    print e
+
+# Prints it out
+# print timeline
+
+# Shows the amount of tweets retrieved
+# print len(timeline)
+
+# Stores the timeline info (for offline use)
+with open('timeline.pkl', 'wb') as f:
+    pickle.dump(timeline, f, pickle.HIGHEST_PROTOCOL)
 
 # Restores the timeline object
 with open('timeline.pkl', 'rb') as f:
